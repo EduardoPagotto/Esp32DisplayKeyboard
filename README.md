@@ -66,7 +66,9 @@ minicom -s
 
 <br>
 
-## ref:
+## References:
 - https://www.embarcados.com.br/arduino-vscode-platformio/
+- https://randomnerdtutorials.com/esp32-pinout-reference-gpios/
+- https://www.fernandok.com/2018/03/esp32-detalhes-internos-e-pinagem.html
 
 
