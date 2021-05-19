@@ -11,8 +11,7 @@ const char hexaKey[LINHAS][COLUNAS] = {{'1', '2', '3', 'A'},  // Linha 0
                                        {'7', '8', '9', 'C'},  // Linha 2
                                        {'*', '0', '#', 'D'}}; // Linha 3
 
-void initKey() {
-
+KeyBoardMatrix::KeyBoardMatrix() {
     int pin;
     for (uint8_t l = 0; l < LINHAS; l++) {
         pin = linhas[l];
@@ -24,9 +23,16 @@ void initKey() {
         pin = colunas[c];
         pinMode(pin, INPUT_PULLUP);
     }
+
+    this->coluna = 0;
+    this->linha = 0;
+    this->last = false;
 }
 
-bool __getKey(uint8_t* linha, uint8_t* coluna) {
+KeyBoardMatrix::~KeyBoardMatrix() {}
+
+bool KeyBoardMatrix::__getKey() {
+
     uint8_t debuncingTime;
     for (uint8_t l = 0; l < LINHAS; l++) {
         digitalWrite(linhas[l], LOW);
@@ -39,8 +45,8 @@ bool __getKey(uint8_t* linha, uint8_t* coluna) {
             }
 
             if (debuncingTime == 10) {
-                *linha = l;
-                *coluna = c;
+                this->linha = l;
+                this->coluna = c;
                 digitalWrite(linhas[l], HIGH);
                 return true;
             }
@@ -50,11 +56,16 @@ bool __getKey(uint8_t* linha, uint8_t* coluna) {
     return false;
 }
 
-char* getKey(char* pcLastKey) {
-    uint8_t l, c;
+char* KeyBoardMatrix::getKey() {
 
-    if ((pcLastKey == NULL) && (__getKey(&l, &c) == true))
-        return (char*)&hexaKey[l][c];
+    if (this->__getKey() == true) {
+        if (last == true)
+            return NULL;
 
+        last = true;
+        return (char*)&hexaKey[linha][coluna];
+    }
+
+    last = false;
     return NULL;
 }
