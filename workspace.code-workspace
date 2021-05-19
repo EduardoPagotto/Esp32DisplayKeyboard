@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "Esp32DisplayKeyboard",
+			"path": "."
+		}
+	],
+	"settings": {
+		"clang-format.executable": "/usr/bin/clang-format",
+		"clang-format.assumeFilename": ".clang-format",
+		"editor.formatOnSave": true,
+	}
+}
