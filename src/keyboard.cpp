@@ -4,8 +4,8 @@
 #define LINHAS 4
 #define COLUNAS 4
 
-const int linhas[] = {21, 22, 23, 25};
-const int colunas[] = {16, 17, 18, 19};
+const int linhas[] = {16, 17, 18, 19};
+const int colunas[] = {21, 22, 23, 25};
 const char hexaKey[LINHAS][COLUNAS] = {{'1', '2', '3', 'A'},  // Linha 0
                                        {'4', '5', '6', 'B'},  // Linha 1
                                        {'7', '8', '9', 'C'},  // Linha 2
@@ -35,7 +35,7 @@ bool __getKey(uint8_t* linha, uint8_t* coluna) {
             debuncingTime = 0;
             while ((digitalRead(colunas[c]) == 0) && (debuncingTime < 10)) {
                 debuncingTime++;
-                vTaskDelay(pdMS_TO_TICKS(20));
+                vTaskDelay(pdMS_TO_TICKS(10));
             }
 
             if (debuncingTime == 10) {
@@ -50,9 +50,10 @@ bool __getKey(uint8_t* linha, uint8_t* coluna) {
     return false;
 }
 
-char* getKey() {
+char* getKey(char* pcLastKey) {
     uint8_t l, c;
-    if (__getKey(&l, &c) == true)
+
+    if ((pcLastKey == NULL) && (__getKey(&l, &c) == true))
         return (char*)&hexaKey[l][c];
 
     return NULL;

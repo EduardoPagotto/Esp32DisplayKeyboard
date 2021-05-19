@@ -30,11 +30,12 @@ void loop() {
 }
 
 void task1(void* ppParamters) {
+    char* key = NULL;
     while (1) {
-        char* key = getKey();
+        key = getKey(key);
         if (key != NULL) {
             Serial.println("Teclado: " + String(*key));
         }
-        vTaskDelay(pdMS_TO_TICKS(1000));
+        vTaskDelay(pdMS_TO_TICKS(100));
     }
 }

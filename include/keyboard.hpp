@@ -3,6 +3,6 @@
 
 void initKey();
 // bool __getKey(uint8_t* linha, uint8_t* coluna);
-char* getKey();
+char* getKey(char* pcLastKey);
 
 #endif
