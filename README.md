@@ -2,6 +2,28 @@
 
 ## Setup
 
+## Hardware
+![ESP32](docs/ESP32-DOIT-DEVKIT-V1-Board-Pinout-30-GPIOs.png)
+Folder (/hardware) has kicad files
+
+### GPIO Connections
+gpio|col|dir
+---|---|---
+16 | 0 | IN
+17 | 1 | IN
+18 | 2 | IN
+19 | 3 | IN
+
+gpio|lin|dir
+---|---|---
+21 | 0 | OUT
+22 | 1 | OUT
+23 | 2 | OUT
+25 | 3 | OUT
+
+<br>
+
+## Firmware
 ```bash
 # Extençoes uteis: 
 # code --list-extensions | xargs -L 1 echo code --install-extension
@@ -34,3 +56,5 @@ minicom -s
 
 ## ref:
 - https://www.embarcados.com.br/arduino-vscode-platformio/
+
+
