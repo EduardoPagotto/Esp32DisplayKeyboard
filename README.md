@@ -1,12 +1,15 @@
-# FreeRTOS e PlataformIO
+# Esp32DisplayKeyboard
+Project of keyboard and display firmware build with FreeRTOS and PlataformIO
 
-## Setup
+<br>
 
 ## Hardware
+Usind EP32 DevKit V1 30 pinouts
 ![ESP32](docs/ESP32-DOIT-DEVKIT-V1-Board-Pinout-30-GPIOs.png)
-Folder (/hardware) has kicad files
 
-### GPIO Connections
+<br>
+
+### GPIO used connections with matrix keyboad
 gpio|col|dir
 ---|---|---
 16 | 0 | IN
@@ -23,7 +26,12 @@ gpio|lin|dir
 
 <br>
 
-## Firmware
+<b>obs:</b> <i>Directory (/hardware) has kicad files</i>
+![kicad](docs/esp32kd.png)
+
+<br>
+
+### Develop Environment
 ```bash
 # Extençoes uteis: 
 # code --list-extensions | xargs -L 1 echo code --install-extension
@@ -38,7 +46,9 @@ sudo usermod -a -G tty $USER
 sudo usermod -a -G dialout $USER
 ```
 
-## Opcionais
+<br>
+
+## Optional
 
 ```bash
 # Simulador de Uno/pic
@@ -53,6 +63,8 @@ sudo apt install minicom
 # bits: 7
 minicom -s
 ```
+
+<br>
 
 ## ref:
 - https://www.embarcados.com.br/arduino-vscode-platformio/
