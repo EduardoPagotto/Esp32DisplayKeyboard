@@ -4,25 +4,49 @@ Project of keyboard and display firmware build with FreeRTOS and PlataformIO
 <br>
 
 ## Hardware
-Usind EP32 DevKit V1 30 pinouts
-![ESP32](docs/ESP32-DOIT-DEVKIT-V1-Board-Pinout-30-GPIOs.png)
 
-<br>
+Keypad 4x4
+
+![KEYPAD_4X4](docs/keypad.png)
 
 ### GPIO used connections with matrix keyboad
 gpio|col|dir
----|---|---
-16 | 0 | IN
-17 | 1 | IN
-18 | 2 | IN
-19 | 3 | IN
+---|----|---
+16 | X1 | IN
+17 | X2 | IN
+18 | X3 | IN * 13
+19 | X4 | IN
 
 gpio|lin|dir
----|---|---
-21 | 0 | OUT
-22 | 1 | OUT
-23 | 2 | OUT
-25 | 3 | OUT
+---|----|---
+21 | Y1 | OUT
+22 | Y2 | OUT
+23 | Y3 | OUT * 12
+25 | Y4 | OUT
+
+<br>
+
+Nokia LCD5110
+
+![Nokia5110](docs/Nokia-5110-LCD.jpg)
+
+### GPIO Nokia 5110
+gpio           |LCD
+---------------|---
+02             |RST
+15             |CE
+04             |DC
+23  (VSPI_MOSI)|DIN
+18  (VSPI_CLK) |CLK
+VCC            |VCC
+BL             |3.3V (220R)
+GND            |GND
+
+<BR>
+
+EP32 DevKit V1 30 pinouts
+
+![ESP32](docs/ESP32-DOIT-DEVKIT-V1-Board-Pinout-30-GPIOs.png)
 
 <br>
 
@@ -70,5 +94,6 @@ minicom -s
 - https://www.embarcados.com.br/arduino-vscode-platformio/
 - https://randomnerdtutorials.com/esp32-pinout-reference-gpios/
 - https://www.fernandok.com/2018/03/esp32-detalhes-internos-e-pinagem.html
+- https://www.electronicshub.org/esp32-nokia-5110-lcd/
 
 
