@@ -18,11 +18,11 @@ GPIO   |PIN | FUNC | Direction
 -------|----|------|----------
 16     | X1 | COL 0| Input
 17     | X2 | COL 1| Input
-18(*13)| X3 | COL 2| Input       
+13     | X3 | COL 2| Input       
 19     | X4 | COL 3| Input
 21     | Y1 | LIN 0| output
 22     | Y2 | LIN 1| output
-23(*12)| Y3 | LIN 2| output 
+12     | Y3 | LIN 2| output 
 25     | Y4 | LIN 3| output
 
 <br>
